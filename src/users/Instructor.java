@@ -127,8 +127,8 @@ public class Instructor extends User implements Activity {
             state.executeQuery();
             state.close();
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Something went wrong!",
-                    "Error", JOptionPane.ERROR_MESSAGE);
+//            JOptionPane.showMessageDialog(null, "Something went wrong!",
+//                    "Error", JOptionPane.ERROR_MESSAGE);
         }
         return assignedModule;
     }
@@ -211,7 +211,8 @@ public class Instructor extends User implements Activity {
             statement.close();
             connect.close();
             JOptionPane.showMessageDialog(null, "Report generated successfully!");
-        } catch (SQLException e) {
+        } 
+        catch (SQLException e) {
 //            JOptionPane.showMessageDialog(null, "Something went wrong!",
 //                    "Error", JOptionPane.ERROR_MESSAGE);
         }

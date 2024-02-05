@@ -38,6 +38,7 @@ import java.awt.Component;
 import javax.swing.Box;
 import java.awt.Dimension;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.Toolkit;
 
 public class Login {
 
@@ -55,15 +56,15 @@ public class Login {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Dell\\Downloads\\Course-Management-System-main (1)\\Course-Management-System-main\\assets\\logo.png"));
 		frame.setResizable(false);
 		frame.setBounds(500, 500, 850, 620);
-		frame.setVisible(true);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(60, 60, 60));
+		panel.setBackground(new Color(0, 0, 0));
 		frame.getContentPane().add(panel, BorderLayout.NORTH);
 		ImageIcon icon = new ImageIcon("/logo.png");
 

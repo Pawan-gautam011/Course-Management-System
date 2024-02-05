@@ -97,10 +97,6 @@ public class Dashboard {
 		lblNewLabel_2_1.setBounds(472, 58, 177, 46);
 		lblNewLabel_2_1.setFont(new Font("Poppins", Font.PLAIN, 24));
 
-		JLabel lblNewLabel_2_2_5 = new JLabel("Dashboard");
-		lblNewLabel_2_2_5.setBounds(10, 10, 175, 46);
-		lblNewLabel_2_2_5.setFont(new Font("Poppins", Font.BOLD, 25));
-
 		JLabel lblNewLabel = new JLabel("" + c.getCourse().size());
 		lblNewLabel.setBounds(39, 110, 197, 69);
 		lblNewLabel.setFont(new Font("Poppins", Font.BOLD, 63));
@@ -148,7 +144,6 @@ public class Dashboard {
 		dashboard.add(lblNewLabel_2_3_1);
 		dashboard.add(lblNewLabel_2_1);
 		dashboard.add(lblNewLabel_3);
-		dashboard.add(lblNewLabel_2_2_5);
 		
 		JScrollPane scrollPane_4 = new JScrollPane();
 		scrollPane_4.setBounds(49, 409, 324, 110);
@@ -156,6 +151,11 @@ public class Dashboard {
 		
 		table_3 = new JTable(enroll);
 		scrollPane_4.setViewportView(table_3);
+		
+		JLabel lblNewLabel_9 = new JLabel("Dashboard");
+		lblNewLabel_9.setFont(new Font("Dialog", Font.BOLD, 25));
+		lblNewLabel_9.setBounds(23, 11, 150, 50);
+		dashboard.add(lblNewLabel_9);
 		if(user=="students") {
 			scrollPane_4.setVisible(true);
 			lblNewLabel_8.setVisible(true);
@@ -616,65 +616,47 @@ if(user=="admin") {
 			}
 		});
 
-		JLabel lblNewLabel_5 = new JLabel("" + user);
+		JLabel lblNewLabel_5 = new JLabel("<dynamic>");
 		lblNewLabel_5.setForeground(new Color(255, 255, 255));
-		lblNewLabel_5.setFont(new Font("Poppins", Font.PLAIN, 11));
-
-		JLabel lblNewLabel_10 = new JLabel("© 2023 | Copyright");
-		lblNewLabel_10.setFont(new Font("Poppins", Font.PLAIN, 10));
+		lblNewLabel_5.setFont(new Font("Dialog", Font.BOLD, 20));
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
 		gl_panel_1.setHorizontalGroup(
-				gl_panel_1.createParallelGroup(Alignment.LEADING)
+			gl_panel_1.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_1.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_panel_1.createSequentialGroup()
-								.addContainerGap()
-								.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-										.addGroup(gl_panel_1.createSequentialGroup()
-												.addGroup(gl_panel_1.createParallelGroup(Alignment.TRAILING, false)
-														.addComponent(btnNewButton, Alignment.LEADING,
-																GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-																Short.MAX_VALUE)
-														.addComponent(btnCourses, Alignment.LEADING,
-																GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-																Short.MAX_VALUE)
-														.addComponent(btnTutors, Alignment.LEADING,
-																GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-																Short.MAX_VALUE)
-														.addComponent(btnMail, Alignment.LEADING,
-																GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-																Short.MAX_VALUE)
-														.addComponent(btnSettings, Alignment.LEADING,
-																GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-																Short.MAX_VALUE)
-														.addComponent(btnLogOut, Alignment.LEADING,
-																GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-																Short.MAX_VALUE))
-												.addContainerGap(25, Short.MAX_VALUE))
-										.addGroup(gl_panel_1.createSequentialGroup()
-												.addComponent(lblNewLabel_5, GroupLayout.DEFAULT_SIZE, 103,
-														Short.MAX_VALUE)
-												.addGap(25))
-										.addComponent(lblNewLabel_10, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 128,
-												Short.MAX_VALUE))));
+							.addGroup(gl_panel_1.createParallelGroup(Alignment.TRAILING, false)
+								.addComponent(btnNewButton, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(btnCourses, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(btnTutors, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(btnMail, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(btnSettings, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(btnLogOut, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+							.addContainerGap(33, Short.MAX_VALUE))
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addComponent(lblNewLabel_5, GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+							.addGap(25))))
+		);
 		gl_panel_1.setVerticalGroup(
-				gl_panel_1.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_1.createSequentialGroup()
-								.addGap(32)
-								.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-								.addGap(18)
-								.addComponent(btnCourses, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-								.addGap(18)
-								.addComponent(btnTutors, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-								.addGap(18)
-								.addComponent(btnMail, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-								.addGap(18)
-								.addComponent(btnSettings, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-								.addGap(18)
-								.addComponent(btnLogOut, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(ComponentPlacement.RELATED, 203, Short.MAX_VALUE)
-								.addComponent(lblNewLabel_5)
-								.addGap(35)
-								.addComponent(lblNewLabel_10)
-								.addContainerGap()));
+			gl_panel_1.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_1.createSequentialGroup()
+					.addGap(32)
+					.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addComponent(btnCourses, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addComponent(btnTutors, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addComponent(btnMail, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addComponent(btnSettings, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addComponent(btnLogOut, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, 207, Short.MAX_VALUE)
+					.addComponent(lblNewLabel_5)
+					.addGap(60))
+		);
 		panel_1.setLayout(gl_panel_1);
 
 	}
