@@ -168,6 +168,12 @@ public class Student extends User implements Activity {
         return students;
     }
 
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
   
 
 }

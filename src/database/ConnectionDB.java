@@ -13,7 +13,7 @@ public class ConnectionDB {
 		DatabaseMGMT c = new DatabaseMGMT();
 		// driver loading
 		DatabaseMGMT db = new DatabaseMGMT();
-		 db.setUrl("jdbc:mysql://localhost:3306/cms");
+		 db.setUrl("jdbc:mysql://localhost:4306/cms");
 		 db.setUsername("root");
 		 db.setPassword("");
 		try {
@@ -22,16 +22,16 @@ public class ConnectionDB {
 			return connect;
 			
 		} catch (ClassNotFoundException e) {
-			JOptionPane.showMessageDialog(null,
-					"Couldn't connect to the database! Please make sure that your database server is active.",
-					"Connection Error!", JOptionPane.ERROR_MESSAGE);
-			System.out.println(e);
+//			JOptionPane.showMessageDialog(null,
+//					"Couldn't connect to the database! Please make sure that your database server is active.",
+//					"Connection Error!", JOptionPane.ERROR_MESSAGE);
+//			System.out.println(e);
 			return null;
 		} catch (SQLException e) {
-			JOptionPane.showMessageDialog(null,
-					"Couldn't connect to the database! Please make sure that your database server is active.",
-					"Connection Error!", JOptionPane.ERROR_MESSAGE);
-			System.out.println(e);
+//			JOptionPane.showMessageDialog(null,
+//					"Couldn't connect to the database! Please make sure that your database server is active.",
+//					"Connection Error!", JOptionPane.ERROR_MESSAGE);
+//			System.out.println(e);
 			return null;
 		}
 

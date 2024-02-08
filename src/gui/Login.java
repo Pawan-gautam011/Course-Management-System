@@ -39,6 +39,9 @@ import javax.swing.Box;
 import java.awt.Dimension;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.Toolkit;
+import javax.swing.border.LineBorder;
+import javax.swing.SwingConstants;
+import javax.swing.JToggleButton;
 
 public class Login {
 
@@ -67,51 +70,51 @@ public class Login {
 		panel.setBackground(new Color(0, 0, 0));
 		frame.getContentPane().add(panel, BorderLayout.NORTH);
 		ImageIcon icon = new ImageIcon("/logo.png");
-
-		JLabel lblNewLabel = new JLabel("Welcome to Course Management System");
-		lblNewLabel.setForeground(new Color(164, 201, 58));
-		lblNewLabel.setAlignmentX(0.5f);
-		lblNewLabel.setFont(new Font("Poppins", Font.BOLD, 25));
+		
+				JLabel lblNewLabel_2 = new JLabel();
+				lblNewLabel_2.setAlignmentX(0.5f);
+				lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\Dell\\Downloads\\Course-Management-System-main (1)\\Course-Management-System-main\\assets\\logo.png"));
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
-				gl_panel.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel.createSequentialGroup()
-								.addGap(165)
-								.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 556, GroupLayout.PREFERRED_SIZE)
-								.addContainerGap(115, Short.MAX_VALUE)));
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addGap(243)
+					.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 279, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(314, Short.MAX_VALUE))
+		);
 		gl_panel.setVerticalGroup(
-				gl_panel.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel.createSequentialGroup()
-								.addContainerGap()
-								.addComponent(lblNewLabel)
-								.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lblNewLabel_2, GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE))
+		);
 		panel.setLayout(gl_panel);
 
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(255, 255, 255));
+		panel_1.setBackground(new Color(0, 0, 0));
 		frame.getContentPane().add(panel_1, BorderLayout.CENTER);
 
 		email = new JTextField();
-		email.setBounds(120, 172, 220, 40);
+		email.setBounds(39, 42, 220, 40);
 		email.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		email.setToolTipText("");
 		email.setColumns(10);
 		JLabel invalid1 = new JLabel("Invalid");
-		invalid1.setBounds(184, 214, 32, 16);
+		invalid1.setBounds(103, 84, 32, 16);
 		invalid1.setVisible(false);
 		JLabel invalid2 = new JLabel("Invalid");
-		invalid2.setBounds(184, 310, 32, 16);
+		invalid2.setBounds(103, 180, 32, 16);
 		invalid2.setVisible(false);
 		password = new JPasswordField();
-		password.setBounds(120, 265, 220, 40);
+		password.setBounds(39, 135, 220, 40);
 		password.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		panel_1.setLayout(null);
 		panel_1.add(email);
 		panel_1.add(password);
 		String roles[] = { "admin", "instructors", "students" };
 		JComboBox comboBox = new JComboBox(roles);
+		comboBox.setBounds(39, 241, 220, 40);
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Select Role..", "admin", "instructors", "students"}));
-		comboBox.setBounds(120, 371, 220, 40);
 		comboBox.setBackground(new Color(248, 248, 248));
 		comboBox.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		comboBox.setForeground(new Color(0, 0, 0));
@@ -119,7 +122,7 @@ public class Login {
 		panel_1.add(comboBox);
 
 		JButton login = new JButton("Log In");
-		login.setBounds(242, 443, 100, 34);
+		login.setBounds(38, 316, 150, 34);
 		login.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		login.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -133,6 +136,7 @@ public class Login {
 					if (comboBox.getSelectedItem().equals("students")) {
 						if (s.login(emailField, passField)) {
 							new Dashboard(comboBox.getSelectedItem().toString(),emailField);
+//							String studentName = s.getName();
 							frame.dispose();
 						}
 					} else if (comboBox.getSelectedItem().equals("instructors")) {
@@ -159,27 +163,27 @@ public class Login {
 
 			}
 		});
-		login.setBackground(new Color(117, 191, 67));
-		login.setForeground(new Color(248, 248, 248));
+		login.setBackground(new Color(0, 64, 0));
+		login.setForeground(new Color(255, 255, 255));
 		login.setFont(new Font("Poppins", Font.PLAIN, 16));
 		panel_1.add(login);
 
 		JLabel cacc = new JLabel("Enter Email");
-		cacc.setBounds(120, 141, 96, 22);
-		cacc.setForeground(new Color(33, 210, 13));
-		cacc.setFont(new Font("Dialog", Font.PLAIN, 15));
+		cacc.setBounds(39, 11, 130, 22);
+		cacc.setForeground(new Color(82, 171, 39));
+		cacc.setFont(new Font("Dialog", Font.PLAIN, 20));
 		panel_1.add(cacc);
 
 		JLabel lblNewLabel_1_1 = new JLabel("Enter Password");
-		lblNewLabel_1_1.setBounds(120, 235, 110, 22);
-		lblNewLabel_1_1.setForeground(new Color(33, 210, 13));
-		lblNewLabel_1_1.setFont(new Font("Dialog", Font.PLAIN, 15));
+		lblNewLabel_1_1.setBounds(39, 105, 150, 22);
+		lblNewLabel_1_1.setForeground(new Color(82, 171, 39));
+		lblNewLabel_1_1.setFont(new Font("Dialog", Font.PLAIN, 20));
 		panel_1.add(lblNewLabel_1_1);
 
 		JLabel lblNewLabel_1_1_1 = new JLabel("Select Role");
-		lblNewLabel_1_1_1.setBounds(120, 338, 79, 22);
-		lblNewLabel_1_1_1.setForeground(new Color(33, 210, 13));
-		lblNewLabel_1_1_1.setFont(new Font("Dialog", Font.PLAIN, 15));
+		lblNewLabel_1_1_1.setBounds(39, 208, 129, 22);
+		lblNewLabel_1_1_1.setForeground(new Color(82, 171, 39));
+		lblNewLabel_1_1_1.setFont(new Font("Dialog", Font.PLAIN, 20));
 		panel_1.add(lblNewLabel_1_1_1);
 
 		invalid2.setForeground(new Color(255, 0, 0));
@@ -191,7 +195,7 @@ public class Login {
 		panel_1.add(invalid1);
 
 		JButton btnCreate = new JButton("Create");
-		btnCreate.setBounds(125, 443, 100, 34);
+		btnCreate.setBounds(176, 388, 100, 34);
 		btnCreate.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		btnCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -201,34 +205,43 @@ public class Login {
 
 			}
 		});
-		btnCreate.setForeground(new Color(248, 248, 248));
+		btnCreate.setForeground(new Color(0, 128, 0));
 		btnCreate.setFont(new Font("Poppins", Font.PLAIN, 16));
-		btnCreate.setBackground(new Color(117, 191, 67));
+		btnCreate.setBackground(new Color(0, 0, 0));
 		panel_1.add(btnCreate);
-
-		JLabel lblNewLabel_2 = new JLabel();
-		lblNewLabel_2.setBounds(0, 0, 268, 113);
-		lblNewLabel_2.setAlignmentX(0.5f);
-		Image logo = new ImageIcon(this.getClass().getResource("/logo.png")).getImage();
-		lblNewLabel_2.setIcon(new ImageIcon(logo));
-		panel_1.add(lblNewLabel_2);
+	
 
 		JLabel lblNewLabel_3 = new JLabel("");
 		lblNewLabel_3.setBounds(87, 178, 32, 34);
-		Image mail = new ImageIcon(this.getClass().getResource("/mail.png")).getImage();
-		lblNewLabel_3.setIcon(new ImageIcon(mail));
 		panel_1.add(lblNewLabel_3);
 
 		JLabel lblNewLabel_3_1 = new JLabel("");
 		lblNewLabel_3_1.setBounds(87, 271, 32, 34);
-		Image pass = new ImageIcon(this.getClass().getResource("/password.png")).getImage();
-		lblNewLabel_3_1.setIcon(new ImageIcon(pass));
 		panel_1.add(lblNewLabel_3_1);
-
-		JLabel lblNewLabel_3_1_1 = new JLabel("");
-		lblNewLabel_3_1_1.setBounds(87, 371, 32, 34);
-		Image user = new ImageIcon(this.getClass().getResource("/account.png")).getImage();
-		lblNewLabel_3_1_1.setIcon(new ImageIcon(user));
-		panel_1.add(lblNewLabel_3_1_1);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBackground(new Color(0, 0, 0));
+		panel_2.setBorder(new LineBorder(new Color(255, 255, 255), 2));
+		panel_2.setBounds(348, -200, 600, 800);
+		panel_1.add(panel_2);
+		panel_2.setLayout(null);
+		
+		JLabel lblNewLabel_1 = new JLabel("System");
+		lblNewLabel_1.setFont(new Font("Dialog", Font.PLAIN, 30));
+		lblNewLabel_1.setBounds(220, 387, 300, 34);
+		lblNewLabel_1.setForeground(new Color(0, 128, 0));
+		panel_2.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel = new JLabel("Welcome to Course Management");
+		lblNewLabel.setBounds(25, 337, 442, 39);
+		lblNewLabel.setFont(new Font("Dialog", Font.PLAIN, 30));
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		panel_2.add(lblNewLabel);
+		
+		JLabel lblNewLabel_4 = new JLabel("Don't have Account?");
+		lblNewLabel_4.setFont(new Font("Dialog", Font.PLAIN, 15));
+		lblNewLabel_4.setForeground(new Color(255, 255, 255));
+		lblNewLabel_4.setBounds(24, 394, 150, 24);
+		panel_1.add(lblNewLabel_4);
 	}
 }

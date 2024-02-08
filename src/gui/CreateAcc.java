@@ -1,5 +1,4 @@
 package gui;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
@@ -26,13 +25,16 @@ import users.Student;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+import java.awt.Toolkit;
+import javax.swing.border.LineBorder;
+import java.awt.FlowLayout;
+import javax.swing.DefaultComboBoxModel;
 
 public class CreateAcc {
 
 	private JFrame frame;
-	private JPanel panel;
 	private JPanel panel_1;
-	private JLabel lblNewLabel;
 	private JTextField username;
 	private JTextField email;
 	private JPasswordField password;
@@ -43,7 +45,9 @@ public class CreateAcc {
 	private JButton btnNewButton;
 	private JLabel lblNewLabel_2;
 	private JLabel lblNewLabel_3;
-	private JLabel lblNewLabel_4;
+	private JLabel lblNewLabel;
+	private JLabel lblNewLabel_5;
+	private JLabel lblNewLabel_6;
 
 	/**
 	 * Create the application.
@@ -57,41 +61,41 @@ public class CreateAcc {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setResizable(false);
-		frame.setBounds(100, 100, 825, 700);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Dell\\Downloads\\Course-Management-System-main (1)\\Course-Management-System-main\\assets\\logo.png"));
+		frame.setBackground(new Color(0, 0, 0));
+		frame.setBounds(500, 500, 850, 620);
+		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
-		panel = new JPanel();
-		panel.setBackground(new Color(60, 60, 60));
-		frame.getContentPane().add(panel, BorderLayout.NORTH);
-
-		lblNewLabel = new JLabel("Create Account");
-		lblNewLabel.setForeground(new Color(164, 201, 58));
-		lblNewLabel.setFont(new Font("Poppins", Font.BOLD, 30));
-		panel.add(lblNewLabel);
 
 		panel_1 = new JPanel();
+		panel_1.setBackground(new Color(0, 0, 0));
 		frame.getContentPane().add(panel_1, BorderLayout.CENTER);
 
 		username = new JTextField();
+		username.setBounds(401, 130, 150, 34);
 		username.setToolTipText("");
 		username.setColumns(10);
 		username.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 
 		email = new JTextField();
+		email.setBounds(623, 130, 200, 34);
 		email.setToolTipText("");
 		email.setColumns(10);
 		email.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 
 		password = new JPasswordField();
+		password.setBounds(401, 233, 150, 34);
 		password.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 
 		phone = new JTextField();
+		phone.setBounds(623, 233, 200, 34);
 		phone.setToolTipText("");
 		phone.setColumns(10);
 		phone.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 
 		rolesSelect = new JComboBox(new Object[] { "Student", "Instructor" });
+		rolesSelect.setModel(new DefaultComboBoxModel(new String[] {"Select your mode..", "", "Student", "Instructor"}));
+		rolesSelect.setBounds(401, 330, 150, 34);
 		rolesSelect.setForeground(Color.BLACK);
 		rolesSelect.setFont(new Font("Poppins", Font.PLAIN, 14));
 		rolesSelect.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
@@ -103,6 +107,9 @@ public class CreateAcc {
 		// cor.toArray();
 
 		course = new JComboBox(new Object[] {});
+		course.setModel(new DefaultComboBoxModel(new String[] {"Select Courses.."}));
+		course.setSelectedIndex(0);
+		course.setBounds(623, 330, 200, 34);
 		for (int i = 0; i < cor.size(); i++) {
 			course.addItem(cor.get(i).course_name);
 		}
@@ -113,6 +120,7 @@ public class CreateAcc {
 
 		Student s = new Student();
 		btnCreate = new JButton("Create");
+		btnCreate.setBounds(545, 413, 91, 34);
 		btnCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Instructor i = new Instructor();
@@ -142,108 +150,91 @@ public class CreateAcc {
 		btnCreate.setForeground(new Color(248, 248, 248));
 		btnCreate.setFont(new Font("Poppins", Font.PLAIN, 16));
 		btnCreate.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
-		btnCreate.setBackground(new Color(117, 191, 67));
+		btnCreate.setBackground(new Color(0, 64, 0));
 
 		btnNewButton = new JButton("Log In");
+		btnNewButton.setBounds(623, 502, 72, 34);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				new Login();
 			}
 		});
-		btnNewButton.setForeground(new Color(248, 248, 248));
+		btnNewButton.setForeground(new Color(82, 171, 39));
 		btnNewButton.setFont(new Font("Poppins", Font.PLAIN, 16));
 		btnNewButton.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
-		btnNewButton.setBackground(new Color(117, 191, 67));
+		btnNewButton.setBackground(new Color(0, 0, 0));
 
 		JLabel lblNewLabel_1 = new JLabel("Enter Username");
-		lblNewLabel_1.setForeground(new Color(117, 191, 165));
-		lblNewLabel_1.setFont(new Font("Poppins", Font.PLAIN, 14));
+		lblNewLabel_1.setBounds(401, 98, 150, 20);
+		lblNewLabel_1.setForeground(new Color(82, 171, 39));
+		lblNewLabel_1.setFont(new Font("Dialog", Font.PLAIN, 20));
 
-		JLabel lblNewLabel_1_1 = new JLabel("Enter Email:");
-		lblNewLabel_1_1.setForeground(new Color(117, 191, 165));
-		lblNewLabel_1_1.setFont(new Font("Poppins", Font.PLAIN, 14));
+		JLabel lblNewLabel_1_1 = new JLabel("Enter Email");
+		lblNewLabel_1_1.setBounds(623, 97, 150, 22);
+		lblNewLabel_1_1.setForeground(new Color(82, 171, 39));
+		lblNewLabel_1_1.setFont(new Font("Dialog", Font.PLAIN, 20));
 
-		JLabel lblNewLabel_1_2 = new JLabel("Enter Password:\r\n");
-		lblNewLabel_1_2.setForeground(new Color(117, 191, 165));
-		lblNewLabel_1_2.setFont(new Font("Poppins", Font.PLAIN, 14));
+		JLabel lblNewLabel_1_2 = new JLabel("Enter Password");
+		lblNewLabel_1_2.setBounds(401, 201, 150, 22);
+		lblNewLabel_1_2.setForeground(new Color(82, 171, 39));
+		lblNewLabel_1_2.setFont(new Font("Dialog", Font.PLAIN, 20));
 
-		JLabel lblNewLabel_1_3 = new JLabel("Enter Pnone Number:");
-		lblNewLabel_1_3.setForeground(new Color(117, 191, 165));
-		lblNewLabel_1_3.setFont(new Font("Poppins", Font.PLAIN, 14));
+		JLabel lblNewLabel_1_3 = new JLabel("Enter Phone Number");
+		lblNewLabel_1_3.setBounds(623, 201, 200, 22);
+		lblNewLabel_1_3.setForeground(new Color(82, 171, 39));
+		lblNewLabel_1_3.setFont(new Font("Dialog", Font.PLAIN, 20));
 
-		lblNewLabel_2 = new JLabel("Select Role:");
-		lblNewLabel_2.setForeground(new Color(117, 191, 165));
-		lblNewLabel_2.setFont(new Font("Poppins", Font.PLAIN, 14));
+		lblNewLabel_2 = new JLabel("Select Role");
+		lblNewLabel_2.setBounds(401, 297, 150, 22);
+		lblNewLabel_2.setForeground(new Color(82, 171, 39));
+		lblNewLabel_2.setFont(new Font("Dialog", Font.PLAIN, 20));
 
-		lblNewLabel_3 = new JLabel("Select Course:");
-		lblNewLabel_3.setForeground(new Color(117, 191, 165));
-		lblNewLabel_3.setFont(new Font("Poppins", Font.PLAIN, 14));
+		lblNewLabel_3 = new JLabel("Select Course");
+		lblNewLabel_3.setBounds(623, 297, 219, 22);
+		lblNewLabel_3.setForeground(new Color(82, 171, 39));
+		lblNewLabel_3.setFont(new Font("Dialog", Font.PLAIN, 20));
 		
-		lblNewLabel_4 = new JLabel("*Note: Ignore for Teacher");
-		lblNewLabel_4.setForeground(new Color(117, 191, 165));
-		lblNewLabel_4.setFont(new Font("Poppins", Font.ITALIC, 9));
-		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
-		gl_panel_1.setHorizontalGroup(
-			gl_panel_1.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_1.createSequentialGroup()
-					.addGap(300)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING, false)
-						.addComponent(rolesSelect, 0, 207, Short.MAX_VALUE)
-						.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
-						.addComponent(phone, GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
-						.addComponent(password, GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
-						.addComponent(lblNewLabel_1_1, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
-						.addComponent(email, GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
-						.addComponent(username, GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
-						.addComponent(lblNewLabel_1)
-						.addComponent(lblNewLabel_1_2)
-						.addComponent(lblNewLabel_1_3)
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addComponent(btnCreate, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-							.addGap(29)
-							.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-						.addComponent(course, 0, 207, Short.MAX_VALUE)
-						.addComponent(lblNewLabel_3, GroupLayout.PREFERRED_SIZE, 119, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_4, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-					.addContainerGap(304, Short.MAX_VALUE))
-		);
-		gl_panel_1.setVerticalGroup(
-			gl_panel_1.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_1.createSequentialGroup()
-					.addGap(24)
-					.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(username, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(lblNewLabel_1_1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(email, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(lblNewLabel_1_2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(password, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(lblNewLabel_1_3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(phone, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(rolesSelect, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(lblNewLabel_3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(course, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(lblNewLabel_4, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnCreate, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
-						.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE))
-					.addGap(52))
-		);
-		panel_1.setLayout(gl_panel_1);
+		lblNewLabel = new JLabel("Create  your");
+		lblNewLabel.setBounds(10, 253, 473, 82);
+		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 60));
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		panel_1.setLayout(null);
+		
+		lblNewLabel_5 = new JLabel("Account");
+		lblNewLabel_5.setBounds(79, 344, 273, 59);
+		lblNewLabel_5.setFont(new Font("Dialog", Font.BOLD, 55));
+		lblNewLabel_5.setForeground(new Color(0, 128, 0));
+		panel_1.add(lblNewLabel_5);
+		panel_1.add(rolesSelect);
+		panel_1.add(lblNewLabel_2);
+		panel_1.add(phone);
+		panel_1.add(password);
+		panel_1.add(lblNewLabel_1_1);
+		panel_1.add(email);
+		panel_1.add(username);
+		panel_1.add(lblNewLabel_1);
+		panel_1.add(lblNewLabel_1_2);
+		panel_1.add(lblNewLabel_1_3);
+		panel_1.add(btnCreate);
+		panel_1.add(btnNewButton);
+		panel_1.add(course);
+		panel_1.add(lblNewLabel_3);
+		panel_1.add(lblNewLabel);
+		
+		lblNewLabel_6 = new JLabel("Already have Account?");
+		lblNewLabel_6.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_6.setForeground(new Color(255, 255, 255));
+		lblNewLabel_6.setBounds(450, 503, 160, 34);
+		panel_1.add(lblNewLabel_6);
+		
+		JPanel panel = new JPanel();
+		panel.setBorder(new LineBorder(new Color(255, 255, 255), 2));
+		panel.setBackground(new Color(0, 0, 0));
+		panel.setForeground(new Color(0, 0, 0));
+		panel.setBounds(368, 0, 500, 580);
+		panel_1.add(panel);
+		panel.setLayout(null);
 		frame.setVisible(true);
 
 		String[] roles = { "Teacher", "Student" };

@@ -54,12 +54,12 @@ public class ViewReport {
 		frame.getContentPane().add(panel_1, BorderLayout.CENTER);
 		
 		textField = new JTextField();
-		textField.setBounds(144, 22, 106, 22);
+		textField.setBounds(144, 45, 106, 22);
 		textField.setFont(new Font("Poppins", Font.PLAIN, 10));
 		textField.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Student ID");
-		lblNewLabel_1.setBounds(170, 0, 77, 16);
+		lblNewLabel_1.setBounds(144, 25, 77, 16);
 		lblNewLabel_1.setFont(new Font("Poppins", Font.PLAIN, 10));
 		
 		JButton btnNewButton = new JButton("View");
@@ -75,7 +75,7 @@ public class ViewReport {
 				
 			}
 		});
-		btnNewButton.setBounds(282, 21, 77, 25);
+		btnNewButton.setBounds(282, 44, 77, 25);
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setBorderPainted(false);
 		btnNewButton.setFont(new Font("Poppins", Font.PLAIN, 10));

@@ -69,7 +69,7 @@ public class Dashboard {
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(60, 60, 60));
 		frame.getContentPane().add(panel, BorderLayout.NORTH);
-		JLabel lblNewLabel_1 = new JLabel("Course Management System");
+		JLabel lblNewLabel_1 = new JLabel("DashBoard");
 		panel.add(lblNewLabel_1);
 		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setFont(new Font("Poppins", Font.BOLD, 25));
@@ -82,7 +82,19 @@ public class Dashboard {
 		panel_2.setLayout(card);
 
 		JPanel dashboard = new JPanel();
+		dashboard.setBackground(new Color(0, 0, 0));
+		dashboard.setForeground(new Color(255, 255, 255));
 		panel_2.add(dashboard, "name_883401573051700");
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
 
 		// for number of courses
 		ArrayList<Courses> cor = new ArrayList<Courses>();
@@ -90,42 +102,53 @@ public class Dashboard {
 		cor = c.getCourse();
 
 		JLabel lblNewLabel_2 = new JLabel("No of Courses");
-		lblNewLabel_2.setBounds(39, 58, 197, 46);
+		lblNewLabel_2.setForeground(new Color(255, 255, 255));
+		lblNewLabel_2.setBounds(159, 128, 197, 46);
 		lblNewLabel_2.setFont(new Font("Poppins", Font.PLAIN, 24));
 
 		JLabel lblNewLabel_2_1 = new JLabel("No of Tutors");
-		lblNewLabel_2_1.setBounds(472, 58, 177, 46);
+		lblNewLabel_2_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_2_1.setBounds(592, 128, 177, 46);
 		lblNewLabel_2_1.setFont(new Font("Poppins", Font.PLAIN, 24));
 
 		JLabel lblNewLabel = new JLabel("" + c.getCourse().size());
-		lblNewLabel.setBounds(39, 110, 197, 69);
+		lblNewLabel.setBackground(new Color(255, 255, 255));
+		lblNewLabel.setForeground(new Color(47, 196, 30));
+		lblNewLabel.setBounds(159, 180, 197, 69);
 		lblNewLabel.setFont(new Font("Poppins", Font.BOLD, 63));
 
 		Instructor i = new Instructor();
 		JLabel lblNewLabel_3 = new JLabel("" + i.getInstructor().size());
-		lblNewLabel_3.setBounds(472, 110, 197, 69);
+		lblNewLabel_3.setBackground(new Color(240, 240, 240));
+		lblNewLabel_3.setForeground(new Color(47, 196, 30));
+		lblNewLabel_3.setBounds(592, 180, 197, 69);
 		lblNewLabel_3.setFont(new Font("Poppins", Font.BOLD, 63));
 
 		JLabel lblNewLabel_2_3 = new JLabel("No of Modules\r\n");
-		lblNewLabel_2_3.setBounds(39, 230, 197, 46);
+		lblNewLabel_2_3.setForeground(new Color(255, 255, 255));
+		lblNewLabel_2_3.setBounds(159, 300, 197, 46);
 		lblNewLabel_2_3.setFont(new Font("Poppins", Font.PLAIN, 24));
 
 		Modules m = new Modules();
 		JLabel lblNewLabel_4 = new JLabel("" + m.getModules().size());
-		lblNewLabel_4.setBounds(39, 282, 197, 69);
+		lblNewLabel_4.setForeground(new Color(47, 196, 30));
+		lblNewLabel_4.setBounds(159, 352, 197, 69);
 		lblNewLabel_4.setFont(new Font("Poppins", Font.BOLD, 63));
 
 		JLabel lblNewLabel_2_3_1 = new JLabel("No of Students\r\n");
-		lblNewLabel_2_3_1.setBounds(472, 230, 197, 46);
+		lblNewLabel_2_3_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_2_3_1.setBounds(592, 300, 197, 46);
 		lblNewLabel_2_3_1.setFont(new Font("Poppins", Font.PLAIN, 24));
 
 		Student s = new Student();
 		JLabel lblNewLabel_6 = new JLabel("" + s.getStudents().size());
-		lblNewLabel_6.setBounds(472, 282, 197, 69);
+		lblNewLabel_6.setForeground(new Color(47, 196, 30));
+		lblNewLabel_6.setBounds(592, 352, 197, 69);
 		lblNewLabel_6.setFont(new Font("Poppins", Font.BOLD, 63));
 		
 		JLabel lblNewLabel_8 = new JLabel("Modules");
-		lblNewLabel_8.setBounds(39, 379, 166, 20);
+		lblNewLabel_8.setForeground(new Color(255, 255, 255));
+		lblNewLabel_8.setBounds(159, 449, 166, 20);
 		lblNewLabel_8.setFont(new Font("Poppins", Font.PLAIN, 13));
 		dashboard.setLayout(null);
 		
@@ -146,16 +169,18 @@ public class Dashboard {
 		dashboard.add(lblNewLabel_3);
 		
 		JScrollPane scrollPane_4 = new JScrollPane();
-		scrollPane_4.setBounds(49, 409, 324, 110);
+		scrollPane_4.setBounds(169, 479, 324, 110);
 		dashboard.add(scrollPane_4);
 		
 		table_3 = new JTable(enroll);
 		scrollPane_4.setViewportView(table_3);
 		
-		JLabel lblNewLabel_9 = new JLabel("Dashboard");
-		lblNewLabel_9.setFont(new Font("Dialog", Font.BOLD, 25));
-		lblNewLabel_9.setBounds(23, 11, 150, 50);
+		JLabel lblNewLabel_9 = new JLabel("Welcome back, <dynamic> ! 👋");
+		lblNewLabel_9.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_9.setForeground(new Color(255, 255, 255));
+		lblNewLabel_9.setBounds(257, 23, 360, 34);
 		dashboard.add(lblNewLabel_9);
+		
 		if(user=="students") {
 			scrollPane_4.setVisible(true);
 			lblNewLabel_8.setVisible(true);
@@ -536,6 +561,7 @@ if(user=="admin") {
 		setting.add(btnNewButton_2_1);
 
 		JButton btnNewButton = new JButton("Dashboard");
+		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setBorderPainted(false);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -546,10 +572,11 @@ if(user=="admin") {
 				
 			}
 		});
-		btnNewButton.setBackground(new Color(164, 201, 58));
+		btnNewButton.setBackground(new Color(0, 64, 0));
 		btnNewButton.setFont(new Font("Poppins", Font.PLAIN, 13));
 
 		JButton btnCourses = new JButton("Courses");
+		btnCourses.setForeground(new Color(255, 255, 255));
 		btnCourses.setBorderPainted(false);
 		btnCourses.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -558,10 +585,11 @@ if(user=="admin") {
 			
 			}
 		});
-		btnCourses.setBackground(new Color(164, 201, 58));
+		btnCourses.setBackground(new Color(0, 64, 0));
 		btnCourses.setFont(new Font("Poppins", Font.PLAIN, 13));
 
 		JButton btnTutors = new JButton("Tutors");
+		btnTutors.setForeground(new Color(255, 255, 255));
 		btnTutors.setBorderPainted(false);
 		btnTutors.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -570,10 +598,11 @@ if(user=="admin") {
 			
 			}
 		});
-		btnTutors.setBackground(new Color(164, 201, 58));
+		btnTutors.setBackground(new Color(0, 64, 0));
 		btnTutors.setFont(new Font("Poppins", Font.PLAIN, 13));
 
 		JButton btnMail = new JButton("Mail");
+		btnMail.setForeground(new Color(255, 255, 255));
 		btnMail.setBorderPainted(false);
 		btnMail.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -589,10 +618,11 @@ if(user=="admin") {
 
 			}
 		});
-		btnMail.setBackground(new Color(164, 201, 58));
+		btnMail.setBackground(new Color(0, 64, 0));
 		btnMail.setFont(new Font("Poppins", Font.PLAIN, 13));
 
 		JButton btnSettings = new JButton("Setting");
+		btnSettings.setForeground(new Color(255, 255, 255));
 		btnSettings.setBorderPainted(false);
 		btnSettings.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -601,12 +631,13 @@ if(user=="admin") {
 				
 			}
 		});
-		btnSettings.setBackground(new Color(164, 201, 58));
+		btnSettings.setBackground(new Color(0, 64, 0));
 		btnSettings.setFont(new Font("Poppins", Font.PLAIN, 13));
 
 		JButton btnLogOut = new JButton("Logout");
+		btnLogOut.setForeground(new Color(255, 255, 255));
 		btnLogOut.setBorderPainted(false);
-		btnLogOut.setBackground(new Color(164, 201, 58));
+		btnLogOut.setBackground(new Color(0, 64, 0));
 		btnLogOut.setFont(new Font("Poppins", Font.PLAIN, 13));
 		btnLogOut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -620,6 +651,8 @@ if(user=="admin") {
 		lblNewLabel_5.setForeground(new Color(255, 255, 255));
 		lblNewLabel_5.setFont(new Font("Dialog", Font.BOLD, 20));
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
+		
+		
 		gl_panel_1.setHorizontalGroup(
 			gl_panel_1.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_1.createSequentialGroup()
