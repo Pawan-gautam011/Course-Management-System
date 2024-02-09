@@ -20,6 +20,8 @@ import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.table.DefaultTableModel;
+import java.util.Calendar;
+import java.text.SimpleDateFormat;
 
 import courses.AssignedModule;
 import courses.Courses;
@@ -27,9 +29,11 @@ import courses.Modules;
 import users.Admin;
 import users.Instructor;
 import users.Student;
+import users.User;
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.JPasswordField;
+import javax.swing.ImageIcon;
 
 public class Dashboard {
 
@@ -50,6 +54,8 @@ public class Dashboard {
 	private JTable table_2;
 	private JPasswordField pwdNewPass;
 	private JTable table_3;
+	private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	private Calendar cal = Calendar.getInstance();
 
 	public Dashboard(String user, String emailInfo) {
 		this.user = user;
@@ -86,13 +92,7 @@ public class Dashboard {
 		dashboard.setForeground(new Color(255, 255, 255));
 		panel_2.add(dashboard, "name_883401573051700");
 		
-		
 
-		
-		
-		
-		
-		
 		
 		
 
@@ -123,6 +123,8 @@ public class Dashboard {
 		lblNewLabel_3.setForeground(new Color(47, 196, 30));
 		lblNewLabel_3.setBounds(592, 180, 197, 69);
 		lblNewLabel_3.setFont(new Font("Poppins", Font.BOLD, 63));
+		
+		
 
 		JLabel lblNewLabel_2_3 = new JLabel("No of Modules\r\n");
 		lblNewLabel_2_3.setForeground(new Color(255, 255, 255));
@@ -178,7 +180,7 @@ public class Dashboard {
 		JLabel lblNewLabel_9 = new JLabel("Welcome back, <dynamic> ! 👋");
 		lblNewLabel_9.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel_9.setForeground(new Color(255, 255, 255));
-		lblNewLabel_9.setBounds(257, 23, 360, 34);
+		lblNewLabel_9.setBounds(10, 23, 360, 34);
 		dashboard.add(lblNewLabel_9);
 		
 		if(user=="students") {
@@ -622,6 +624,7 @@ if(user=="admin") {
 		btnMail.setFont(new Font("Poppins", Font.PLAIN, 13));
 
 		JButton btnSettings = new JButton("Setting");
+		btnSettings.setSelectedIcon(new ImageIcon("C:\\Users\\Dell\\Downloads\\Course-Management-System-main (1)\\Course-Management-System-main\\assets\\setting.png"));
 		btnSettings.setForeground(new Color(255, 255, 255));
 		btnSettings.setBorderPainted(false);
 		btnSettings.addActionListener(new ActionListener() {
@@ -647,10 +650,29 @@ if(user=="admin") {
 			}
 		});
 
-		JLabel lblNewLabel_5 = new JLabel("<dynamic>");
+				
+//		
+//		ArrayList<User> usr = new ArrayList<User>();
+//		User u = new User();
+//		usr = u.getUser ();
+		JLabel lblNewLabel_5 = new JLabel("");
 		lblNewLabel_5.setForeground(new Color(255, 255, 255));
 		lblNewLabel_5.setFont(new Font("Dialog", Font.BOLD, 20));
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
+		
+		
+
+		
+		
+		
+		
+		
+		
+		JLabel lblNewLabel_10 = new JLabel(sdf.format(cal.getTime()));
+		lblNewLabel_10.setFont(new Font("Dialog", Font.PLAIN, 15));
+		lblNewLabel_10.setForeground(new Color(255, 255, 255));
+		lblNewLabel_10.setBounds(20, 65, 200, 14);
+		dashboard.add(lblNewLabel_10);
 		
 		
 		gl_panel_1.setHorizontalGroup(

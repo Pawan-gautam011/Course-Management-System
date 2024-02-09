@@ -72,30 +72,30 @@ public class CreateAcc {
 		frame.getContentPane().add(panel_1, BorderLayout.CENTER);
 
 		username = new JTextField();
-		username.setBounds(401, 130, 150, 34);
+		username.setBounds(386, 129, 170, 34);
 		username.setToolTipText("");
 		username.setColumns(10);
 		username.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 
 		email = new JTextField();
-		email.setBounds(623, 130, 200, 34);
+		email.setBounds(629, 131, 200, 34);
 		email.setToolTipText("");
 		email.setColumns(10);
 		email.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 
 		password = new JPasswordField();
-		password.setBounds(401, 233, 150, 34);
+		password.setBounds(386, 232, 170, 34);
 		password.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 
 		phone = new JTextField();
-		phone.setBounds(623, 233, 200, 34);
+		phone.setBounds(629, 234, 200, 34);
 		phone.setToolTipText("");
 		phone.setColumns(10);
 		phone.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 
 		rolesSelect = new JComboBox(new Object[] { "Student", "Instructor" });
 		rolesSelect.setModel(new DefaultComboBoxModel(new String[] {"Select your mode..", "", "Student", "Instructor"}));
-		rolesSelect.setBounds(401, 330, 150, 34);
+		rolesSelect.setBounds(386, 329, 170, 34);
 		rolesSelect.setForeground(Color.BLACK);
 		rolesSelect.setFont(new Font("Poppins", Font.PLAIN, 14));
 		rolesSelect.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
@@ -109,7 +109,7 @@ public class CreateAcc {
 		course = new JComboBox(new Object[] {});
 		course.setModel(new DefaultComboBoxModel(new String[] {"Select Courses.."}));
 		course.setSelectedIndex(0);
-		course.setBounds(623, 330, 200, 34);
+		course.setBounds(629, 331, 200, 34);
 		for (int i = 0; i < cor.size(); i++) {
 			course.addItem(cor.get(i).course_name);
 		}
@@ -120,7 +120,7 @@ public class CreateAcc {
 
 		Student s = new Student();
 		btnCreate = new JButton("Create");
-		btnCreate.setBounds(545, 413, 91, 34);
+		btnCreate.setBounds(536, 413, 121, 34);
 		btnCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Instructor i = new Instructor();
@@ -166,32 +166,32 @@ public class CreateAcc {
 		btnNewButton.setBackground(new Color(0, 0, 0));
 
 		JLabel lblNewLabel_1 = new JLabel("Enter Username");
-		lblNewLabel_1.setBounds(401, 98, 150, 20);
+		lblNewLabel_1.setBounds(386, 98, 150, 20);
 		lblNewLabel_1.setForeground(new Color(82, 171, 39));
 		lblNewLabel_1.setFont(new Font("Dialog", Font.PLAIN, 20));
 
 		JLabel lblNewLabel_1_1 = new JLabel("Enter Email");
-		lblNewLabel_1_1.setBounds(623, 97, 150, 22);
+		lblNewLabel_1_1.setBounds(629, 98, 150, 22);
 		lblNewLabel_1_1.setForeground(new Color(82, 171, 39));
 		lblNewLabel_1_1.setFont(new Font("Dialog", Font.PLAIN, 20));
 
 		JLabel lblNewLabel_1_2 = new JLabel("Enter Password");
-		lblNewLabel_1_2.setBounds(401, 201, 150, 22);
+		lblNewLabel_1_2.setBounds(386, 200, 150, 22);
 		lblNewLabel_1_2.setForeground(new Color(82, 171, 39));
 		lblNewLabel_1_2.setFont(new Font("Dialog", Font.PLAIN, 20));
 
 		JLabel lblNewLabel_1_3 = new JLabel("Enter Phone Number");
-		lblNewLabel_1_3.setBounds(623, 201, 200, 22);
+		lblNewLabel_1_3.setBounds(629, 202, 200, 22);
 		lblNewLabel_1_3.setForeground(new Color(82, 171, 39));
 		lblNewLabel_1_3.setFont(new Font("Dialog", Font.PLAIN, 20));
 
 		lblNewLabel_2 = new JLabel("Select Role");
-		lblNewLabel_2.setBounds(401, 297, 150, 22);
+		lblNewLabel_2.setBounds(386, 296, 150, 22);
 		lblNewLabel_2.setForeground(new Color(82, 171, 39));
 		lblNewLabel_2.setFont(new Font("Dialog", Font.PLAIN, 20));
 
 		lblNewLabel_3 = new JLabel("Select Course");
-		lblNewLabel_3.setBounds(623, 297, 219, 22);
+		lblNewLabel_3.setBounds(629, 298, 219, 22);
 		lblNewLabel_3.setForeground(new Color(82, 171, 39));
 		lblNewLabel_3.setFont(new Font("Dialog", Font.PLAIN, 20));
 		
