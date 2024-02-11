@@ -13,7 +13,6 @@ import exception.NullException;
 
 public class Admin extends User implements Activity {
 	
-
 	public Admin() {
 	}
 

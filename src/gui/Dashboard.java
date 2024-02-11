@@ -122,7 +122,7 @@ public class Dashboard {
 		lblNewLabel_3.setBackground(new Color(240, 240, 240));
 		lblNewLabel_3.setForeground(new Color(47, 196, 30));
 		lblNewLabel_3.setBounds(592, 180, 197, 69);
-		lblNewLabel_3.setFont(new Font("Poppins", Font.BOLD, 63));
+		lblNewLabel_3.setFont(new Font("Dialog", Font.BOLD, 63));
 		
 		
 
@@ -176,12 +176,6 @@ public class Dashboard {
 		
 		table_3 = new JTable(enroll);
 		scrollPane_4.setViewportView(table_3);
-		
-		JLabel lblNewLabel_9 = new JLabel("Welcome back, <dynamic> ! 👋");
-		lblNewLabel_9.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_9.setForeground(new Color(255, 255, 255));
-		lblNewLabel_9.setBounds(10, 23, 360, 34);
-		dashboard.add(lblNewLabel_9);
 		
 		if(user=="students") {
 			scrollPane_4.setVisible(true);
@@ -659,22 +653,6 @@ if(user=="admin") {
 		lblNewLabel_5.setForeground(new Color(255, 255, 255));
 		lblNewLabel_5.setFont(new Font("Dialog", Font.BOLD, 20));
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
-		
-		
-
-		
-		
-		
-		
-		
-		
-		JLabel lblNewLabel_10 = new JLabel(sdf.format(cal.getTime()));
-		lblNewLabel_10.setFont(new Font("Dialog", Font.PLAIN, 15));
-		lblNewLabel_10.setForeground(new Color(255, 255, 255));
-		lblNewLabel_10.setBounds(20, 65, 200, 14);
-		dashboard.add(lblNewLabel_10);
-		
-		
 		gl_panel_1.setHorizontalGroup(
 			gl_panel_1.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_1.createSequentialGroup()
@@ -708,10 +686,31 @@ if(user=="admin") {
 					.addComponent(btnSettings, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
 					.addGap(18)
 					.addComponent(btnLogOut, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 207, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED, 222, Short.MAX_VALUE)
 					.addComponent(lblNewLabel_5)
 					.addGap(60))
 		);
+		
+		
+
+		
+		
+		
+		
+		
+		
+		JLabel lblNewLabel_10 = new JLabel(sdf.format(cal.getTime()));
+		lblNewLabel_10.setFont(new Font("Dialog", Font.PLAIN, 15));
+		lblNewLabel_10.setForeground(new Color(255, 255, 255));
+		lblNewLabel_10.setBounds(634, 56, 200, 14);
+		dashboard.add(lblNewLabel_10);
+		
+		JLabel lblNewLabel_9 = new JLabel( user + "mode");
+		lblNewLabel_9.setForeground(new Color(0, 255, 0));
+		lblNewLabel_9.setBackground(new Color(0, 0, 0));
+		lblNewLabel_9.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblNewLabel_9.setBounds(624, 11, 346, 34);
+		dashboard.add(lblNewLabel_9);
 		panel_1.setLayout(gl_panel_1);
 
 	}

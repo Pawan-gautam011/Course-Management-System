@@ -49,6 +49,7 @@ public class AddModule {
 		frame.setVisible(true);
 		
 		JPanel panel = new JPanel();
+		panel.setBackground(new Color(128, 128, 128));
 		frame.getContentPane().add(panel, BorderLayout.NORTH);
 		
 		JLabel lblNewLabel = new JLabel("Add Module");
@@ -56,6 +57,8 @@ public class AddModule {
 		panel.add(lblNewLabel);
 		
 		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(0, 0, 0));
+		panel_1.setForeground(new Color(0, 0, 0));
 		frame.getContentPane().add(panel_1, BorderLayout.CENTER);
 		
 		cidText = new JTextField();
@@ -68,7 +71,8 @@ public class AddModule {
 		mtText.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Add Module");
-		btnNewButton.setForeground(new Color(117, 191, 64));
+		btnNewButton.setBackground(new Color(0, 64, 0));
+		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
@@ -79,12 +83,15 @@ public class AddModule {
 		btnNewButton.setFont(new Font("Poppins", Font.PLAIN, 10));
 		
 		JLabel lblNewLabel_1 = new JLabel("Course ID");
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setFont(new Font("Poppins", Font.PLAIN, 10));
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Module Name");
+		lblNewLabel_1_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1_1.setFont(new Font("Poppins", Font.PLAIN, 10));
 		
 		JLabel lblNewLabel_1_2 = new JLabel("Module Type");
+		lblNewLabel_1_2.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1_2.setFont(new Font("Poppins", Font.PLAIN, 10));
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
 		gl_panel_1.setHorizontalGroup(

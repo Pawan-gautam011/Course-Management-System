@@ -49,6 +49,7 @@ public class AssignModule {
 		frame.setLocationRelativeTo(null);
 		
 		JPanel panel = new JPanel();
+		panel.setBackground(new Color(128, 128, 128));
 		frame.getContentPane().add(panel, BorderLayout.NORTH);
 		
 		JLabel lblNewLabel = new JLabel("Assign Module");
@@ -56,6 +57,8 @@ public class AssignModule {
 		panel.add(lblNewLabel);
 		
 		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(0, 0, 0));
+		panel_1.setForeground(new Color(255, 255, 255));
 		frame.getContentPane().add(panel_1, BorderLayout.CENTER);
 		
 		textField = new JTextField();
@@ -79,14 +82,16 @@ public class AssignModule {
 				}
 			}
 		});
-		btnNewButton.setBackground(new Color(117, 191, 64));
+		btnNewButton.setBackground(new Color(0, 64, 0));
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setBorderPainted(false);
 		btnNewButton.setFont(new Font("Poppins", Font.PLAIN, 10));
 		
 		JLabel lblNewLabel_1 = new JLabel("Teacher Id");
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Module Id");
+		lblNewLabel_1_1.setForeground(new Color(255, 255, 255));
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
 		gl_panel_1.setHorizontalGroup(
 			gl_panel_1.createParallelGroup(Alignment.LEADING)

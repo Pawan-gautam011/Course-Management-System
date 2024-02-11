@@ -43,17 +43,22 @@ public class AddInstructor {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setBackground(new Color(0, 0, 0));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 		JPanel panel = new JPanel();
+		panel.setBackground(new Color(128, 128, 128));
 		frame.getContentPane().add(panel, BorderLayout.NORTH);
 		
 		JLabel lblNewLabel = new JLabel("Add Instructor");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setFont(new Font("Poppins", Font.BOLD, 10));
 		panel.add(lblNewLabel);
 		
 		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(0, 0, 0));
+		panel_1.setForeground(new Color(255, 255, 255));
 		frame.getContentPane().add(panel_1, BorderLayout.CENTER);
 		panel_1.setLayout(null);
 		
@@ -91,28 +96,32 @@ public class AddInstructor {
 			}
 		});
 		btnNewButton.setForeground(new Color(255, 255, 255));
-		btnNewButton.setBackground(new Color(117, 191, 64));
+		btnNewButton.setBackground(new Color(0, 64, 0));
 		btnNewButton.setBorderPainted(false);
 		btnNewButton.setFont(new Font("Poppins", Font.PLAIN, 10));
 		btnNewButton.setBounds(177, 123, 112, 21);
 		panel_1.add(btnNewButton);
 		
 		JLabel lblNewLabel_1 = new JLabel("Username");
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setFont(new Font("Poppins", Font.PLAIN, 10));
 		lblNewLabel_1.setBounds(107, 22, 70, 13);
 		panel_1.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Email\r\n");
+		lblNewLabel_1_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1_1.setFont(new Font("Poppins", Font.PLAIN, 10));
 		lblNewLabel_1_1.setBounds(261, 21, 70, 13);
 		panel_1.add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_1_2 = new JLabel("Password");
+		lblNewLabel_1_2.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1_2.setFont(new Font("Poppins", Font.PLAIN, 10));
 		lblNewLabel_1_2.setBounds(107, 64, 70, 13);
 		panel_1.add(lblNewLabel_1_2);
 		
 		JLabel lblNewLabel_1_3 = new JLabel("Phone Number");
+		lblNewLabel_1_3.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1_3.setFont(new Font("Poppins", Font.PLAIN, 10));
 		lblNewLabel_1_3.setBounds(261, 64, 96, 13);
 		panel_1.add(lblNewLabel_1_3);
